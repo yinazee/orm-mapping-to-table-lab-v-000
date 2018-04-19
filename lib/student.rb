@@ -41,6 +41,12 @@ class Student
       # and assign it to the be the value of the @id attribute of the given instance
   end
 
+  def self.creates(name:, grade:)
+    student = self.new(name, grade)
+    self.save
+    self
+  end
+    
 
 
 
