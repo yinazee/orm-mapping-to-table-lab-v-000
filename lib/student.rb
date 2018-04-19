@@ -41,10 +41,9 @@ class Student
       # and assign it to the be the value of the @id attribute of the given instance
   end
 
-  def self.creates(name:, grade:)
-    student = Student.new(name, grade)
-    student.save
-    student
+  def self.creates(attributes)
+   attributes.each {|key, value| self.send(("#{key}="), value)}
+ end
   end
 
 
