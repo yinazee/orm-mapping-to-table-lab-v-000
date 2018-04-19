@@ -4,10 +4,12 @@ class Student
   attr_reader :id
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
-
-  def initialize(attributes)
-   attributes.each {|key, value| self.send(("#{key}="), value)}
- end
+  
+  def initialize(name, grade, id=nil)
+      @id = id
+      @name = name
+      @grade = grade
+    end
 
  def self.create_table
 
